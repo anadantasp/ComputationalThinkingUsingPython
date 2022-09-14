@@ -1,18 +1,24 @@
-reposta = "S"
+resposta = 'S'
 
-while reposta == "S":
-    num = int(input("Digite o número que deseja fazer fatorial: "))
+while(resposta == 'S'):
 
-    while num < 0 :
-        num = int(input("Digite novamente um número maior que 0: "))
-    
+    num = int(input('Deseja calcular o fatorial de qual número? '))
+
+    while(num <= 0):
+        print('Opa! Não pode número negativo!')
+        num = int(input('Deseja calcular o fatorial de qual número? '))
+
+
     for i in range(num - 1, 0, -1):
-        t = num * i
-        num = t
+        resultado = num * i
+        num = resultado
+        
+        
+    print('Fatorial: ', resultado)
+    resposta = input('Deseja uma nova execução do programa?(S/N) ').upper()
 
-    print(t)
+    while(resposta != 'S' and resposta != 'N'):
+        print('Seguir padrão de resposta S/N')
+        resposta = input('Deseja uma nova execução do programa?(S/N) ').upper()
 
-    reposta = input("Você deseja realizar uma nova execução? (S/N)").upper()
 
-    while reposta != "S" and reposta != "N":
-        reposta = input("Resposta inválida, digite novamente: ").upper()
